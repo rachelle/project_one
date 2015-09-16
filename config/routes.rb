@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   
-  get 'static_pages/index'
+  root 'static_pages#index'
 
-  root 'sessions#index'
-
-  delete '/logout', to: 'sessions#destroy'
+    delete '/logout', to: 'sessions#destroy'
 
     get '/login', to: 'sessions#new'
 
