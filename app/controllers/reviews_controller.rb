@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   
   def index
-   @reviews = photo.reviews
+    @reviews = photo.reviews
   end
 
   def new
