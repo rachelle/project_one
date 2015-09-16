@@ -1,54 +1,15 @@
 Rails.application.routes.draw do
   
+  root 'sessions#index'
 
-  get 'reviews/index'
+  delete '/logout', to: 'sessions#destroy'
 
-  get 'reviews/new'
+    get '/login', to: 'sessions#new'
 
-  get 'reviews/show'
+    resources :sessions
+    resources :users
 
-  get 'reviews/edit'
-
-  get 'reviews/update'
-
-  get 'reviews/destroy'
-
-  get 'photos/index'
-
-  get 'photos/new'
-
-  get 'photos/show'
-
-  get 'photos/edit'
-
-  get 'photos/update'
-
-  get 'photos/destroy'
-
-  get 'users/index'
-
-  get 'users/show'
-
-  get 'users/new'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/destroy'
-
-  get 'users/index'
-
-  get 'users/new'
-
-  get 'users/edt'
-
-  get 'users/update'
-
-  get 'users/show'
-
-  get 'users/destroy'
-
-   root 'sessions#index'
-
+    resources :photos do 
+      resources :comments
+    end
 end
