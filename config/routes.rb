@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'static_pages/index'
+
   root 'sessions#index'
 
   delete '/logout', to: 'sessions#destroy'

@@ -30,6 +30,7 @@ gem 'materialize-sass'
 
 gem 'gmaps4rails'
 
+
 #paperclip
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 
