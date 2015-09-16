@@ -1,89 +1,70 @@
 <section class="introduction">
-    <div class="content">
-         <h1>Charms</h1>
-         <h3>get the charms you desire</h3>
+  <div class="content">
+    <h1>Charms</h1>
+    <h3>get the charms you desire</h3>
     <div class="buttons">
       <%= link_to 'Register', new_user_path, class: "btn" %> 
       <%= link_to 'Sign In', login_path, class: "btn" %>
     </div>
   </div>  
 </section>
-
+<!-- three coloumn row for website content -->
 <section class="cases">
-    <div class="content">
-      <h2>Everyone likes to be pampered</h2>
-
-
-      <ul class="devices">
-        <Li><img width="127px" height="127px" src="http://i.imgur.com/LjwnEPJ.png"alt="Internet for all devices image">
-          <div class="caption">
-            <h3>Get Connected</h3></div>
-          </li>
-        <li>
-          <img width="127px" height="127px" src="http://i.imgur.com/9NluAS9.png" alt="Boost your productivity image">
-         <div class="caption">
-           <h3>Boost your productivity</h3></div>
-        </li>
-        <li>
-          <img width="127px" height="127px" src="http://i.imgur.com/ihShTAC.png" alt="Pay as You Go image"> <div class="caption">
-          <h3>Search as you go</h3></div>
-        </li>
- 
-</ul>
-
+  <div class="content">
+  <h2>Everyone likes to be pampered</h2>
+  <ul class="devices">
+    <li>
+      <img width="127px" height="127px" src="http://i.imgur.com/LjwnEPJ.png"alt="Internet for all devices image">
+      <div class="caption"><h3>Get Connected</h3></div>
+    </li>
+    <li>
+      <img width="127px" height="127px" src="http://i.imgur.com/9NluAS9.png" alt="Boost your productivity image">
+      <div class="caption"><h3>Boost your productivity</h3></div>
+    </li>
+    <li>
+      <img width="127px" height="127px" src="http://i.imgur.com/ihShTAC.png" alt="Pay as You Go image"> 
+      <div class="caption"><h3>Search as you go</h3></div>
+    </li>
+  </ul>
 </section>
-
-
-    
+  <!-- Website slide-show with captions --> 
 <div class="slider">
-    <ul class="slides">
-      <li>
-        <%= image_tag("cute.jpg", :class => "slide-show ") %> 
-        
-
-         <!-- random image -->
-        <div class="caption center-align">
-          <br/>
-          <br/>
-          <br/>
-           <h4 class="slide-one word-text pink lighten-2">Use Charms to find the services you're looking from hair colorist, makeup artists, and barbers.</h4>
-        
-        </div>
-      </li>
-      <li>
-       <%= image_tag("hipster.jpg", :class => "slide-show ") %>  <!-- random image -->
-        <div class="caption left-align">
-          <h4>Discover new local businesses</h4>
-          <h5 class="light grey-text text-lighten-3">
-          </h5>
-        </div>
-      </li>
-       <li>
-        <%= image_tag("ombre-hombre.jpg", :class => "slide-show") %>    <!-- random image -->
-        <div class="caption center-align">
-         
-          <h2 class="light grey-text text-lighten-3">Finding your style</h2>
-        </div>
-      </li>
-      <li>
-        <%= image_tag("makeup.jpeg", :class => "slide-show") %> 
-        <!-- random image -->
-        <div class="caption center-align">
-            <h3 class="light grey-text text-lighten-3">Getting the look you want</h3>
-          
-         
-          
-        </div>
-      </li>
-     
-    </ul>
-  </div>
+  <ul class="slides">
+    <li>
+      <%= image_tag("cute.jpg", :class => "slide-show ") %> 
+      <!-- searching image -->
+      <div class="caption center-align">
+        <br/><br/><br/>
+        <h4 class="slide-one word-text pink lighten-2">Use Charms to find the services you're looking from hair colorist, makeup artists, and barbers.</h4>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("hipster.jpg", :class => "slide-show ") %>  <!-- random image -->
+      <div class="caption left-align">
+        <h4>Discover new local businesses</h4>
+        <h5 class="light grey-text text-lighten-3"></h5>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("ombre-hombre.jpg", :class => "slide-show") %>    <!-- random image -->
+      <div class="caption center-align">
+         <h2 class="light grey-text text-lighten-3">Finding your style</h2>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("makeup.jpeg", :class => "slide-show") %> 
+        <!-- make-up artist image  -->
+      <div class="caption left-align">
+        <h2 class="light grey-text text-lighten-3">Getting the look you want</h2>
+      </div>
+    </li>
+  </ul>
+</div>
 </body>
+
 <script>
   $(document).ready(function(){
       $('.slider').slider({full_width: true});
     });
-        
 </script>
-
 </html>
