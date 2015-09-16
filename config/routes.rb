@@ -1,6 +1,30 @@
 Rails.application.routes.draw do
   
 
+  get 'photos/index'
+
+  get 'photos/new'
+
+  get 'photos/show'
+
+  get 'photos/edit'
+
+  get 'photos/update'
+
+  get 'photos/destroy'
+
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/edit'
+
+  get 'users/update'
+
+  get 'users/destroy'
+
   get 'users/index'
 
   get 'users/new'
