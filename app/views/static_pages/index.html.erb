@@ -3,8 +3,8 @@
          <h1>Charms</h1>
          <h3>get the charms you desire</h3>
     <div class="buttons">
-        <button>Sign Up</button>
-        <button>Log In</buttON>
+      <%= link_to 'Register', new_user_path, class: "btn" %> 
+      <%= link_to 'Sign In', login_path, class: "btn" %>
     </div>
   </div>  
 </section>
@@ -38,36 +38,44 @@
 <div class="slider">
     <ul class="slides">
       <li>
-        <img class="slide-show" src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
+        <%= image_tag("cute.jpg", :class => "slide-show ") %> 
+        
+
+         <!-- random image -->
         <div class="caption center-align">
-           <h4>Use Charms to find the services you're looking from hair colirst, makeup artists, and barbers.</h4>
+          <br/>
+          <br/>
+          <br/>
+           <h4 class="slide-one word-text pink lighten-2">Use Charms to find the services you're looking from hair colorist, makeup artists, and barbers.</h4>
         
         </div>
       </li>
       <li>
-        <img class="slide-show" src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
+       <%= image_tag("hipster.jpg", :class => "slide-show ") %>  <!-- random image -->
         <div class="caption left-align">
-          <h4>Discover new beauty businesses</h4>
+          <h4>Discover new local businesses</h4>
           <h5 class="light grey-text text-lighten-3">
           </h5>
         </div>
       </li>
-      <li>
-        <img class="slide-show" src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
-        <div class="caption right-align">
-            <h3>Finding a stylist</h3>
-          <h5 class="light grey-text text-lighten-3">That fits your style.</h5>
-         
-          <h5 class="light grey-text text-lighten-3"></h5>
-        </div>
-      </li>
-      <li>
-        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+       <li>
+        <%= image_tag("ombre-hombre.jpg", :class => "slide-show") %>    <!-- random image -->
         <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+         
+          <h2 class="light grey-text text-lighten-3">Finding your style</h2>
         </div>
       </li>
+      <li>
+        <%= image_tag("makeup.jpeg", :class => "slide-show") %> 
+        <!-- random image -->
+        <div class="caption center-align">
+            <h3 class="light grey-text text-lighten-3">Getting the look you want</h3>
+          
+         
+          
+        </div>
+      </li>
+     
     </ul>
   </div>
 </body>
