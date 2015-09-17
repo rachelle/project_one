@@ -1,10 +1,12 @@
 class PhotosController < ApplicationController
-  
+
+ 
   def index
     @photos = Photo.all
   end
 
   def show
+   
     @reviews = @photo.reviews.order('created_at DESC')
     @review = Review.new
     @review.user = current_user
@@ -45,11 +47,11 @@ class PhotosController < ApplicationController
   private
  
   def photo_params
-    params.require(:photo).permit(:image, :caption)
+    params.require(:photo).permit(:image, :content)
   end
 
   def check_logged_in
   end
 
- 
+
 end
