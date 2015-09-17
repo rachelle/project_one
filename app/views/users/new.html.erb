@@ -4,12 +4,14 @@
   <div class="tagline"></div>
   
 <div id="login"> 
-  <%= form_for @user do |f| %>
+  <%= form_for @user, :html => { :multipart => true } do |f| %>
      
     <%= f.text_field :email, :placeholder => "email",  class: 'sign-input' %>
   
     <%= f.text_field :name, :placeholder => "name", class: 'sign-input' %>
     <%= f.text_field :password, :placeholder => "password", class: 'sign-input' %>
+
+    <%= f.file_field :avatar, :placeholder => "profile photo", class: 'avatar-input' %>
 
     <%= f.submit "submit", class: "sub-button" %>
   <% end %> 

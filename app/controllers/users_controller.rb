@@ -50,7 +50,7 @@
   private 
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :lat, :lng)
+    params.require(:user).permit(:name, :email, :password, :avatar, :lat, :lng)
   end
   
 end
