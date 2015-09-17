@@ -1,2 +1,7 @@
-<h1>Reviews#show</h1>
-<p>Find me in app/views/reviews/show.html.erb</p>
+<tr> 
+  <td class="comment"> 
+    <span class="content"><%= wrap(review.content) %></span>
+    <span class="timestamp"> 
+      Posted <%= time_ago_in_words(review.created_at) %> ago.</span> 
+    <td> 
+  </tr> 

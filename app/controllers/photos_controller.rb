@@ -1,22 +1,23 @@
 class PhotosController < ApplicationController
 
- 
+   before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  
   def index
     @photos = Photo.all
   end
 
   def show
-   
     @reviews = @photo.reviews.order('created_at DESC')
     @review = Review.new
     @review.user = current_user
+    
   end
 
   def new
     @photo = current_user.photos.new
   end
 
- def create
+  def create
     @photo = current_user.photos.create(photo_params)
     if @photo.save
        redirect_to photos_path(current_user)
@@ -24,6 +25,8 @@ class PhotosController < ApplicationController
        render 'new'
     end
   end
+
+  
 
   def edit
     @photo = Photo.find(params[:id])
@@ -51,6 +54,10 @@ class PhotosController < ApplicationController
   end
 
   def check_logged_in
+  end
+
+    def set_photo
+    @photo = Photo.find(params[:id])
   end
 
 

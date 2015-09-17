@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     resources :users
 
     resources :photos do 
-      resources :comments
+      resources :reviews
     end
 end
