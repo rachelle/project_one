@@ -4,86 +4,53 @@
 
 /* keep the footer on the bottom */
 
+
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+  margin: 0 auto;
+  height: 100%;
 }
 
-main {
-  flex: 1 0 auto;
+html {
+  box-sizing: border-box; 
 }
 
-
-
-
-@keyframes text-fade {
-  0% { opacity: 0; }
-  75% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@-webkit-keyframes text-fade {
-  0% { opacity: 0; }
-  75% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-moz-keyframes text-fade {
-  0% { opacity: 0; }
-  75% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-o-keyframes text-fade {
-  0% { opacity: 0; }
-  75% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes text-fade {
-  0% { opacity: 0; }
-  75% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-body { 
-  background: url("https://download.unsplash.com/photo-1421977870504-378093748ae6") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+.banner{
+  background:url("/images/salon.jpg");
+  position: relative;
+  width: 100%;
+  height: 100%;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
-
-h1 {
-    text-align: center;
-    line-height: 200px;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    color: #FFF;
-    display: block;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 50px;
-    -webkit-animation: text-fade 1.5s;
+#site-title {
+  text-align: center;
+  width: 100%;
+  color: #FFF;
+  display: block;
+  margin-top: 30px; 
+  font-family: 'Open Sans', sans-serif;
+  font-size: 50px;
+  -webkit-animation: text-fade 1.5s;
 }
 
-.tagline{
-    text-align: center;
-    line-height: 200px;
-    margin: auto;
-    position: absolute;
-    top: 61%;
-    width: 100%;
-    color: #FFF;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
-    text-overflow: elipsis;
-    -webkit-animation: text-fade 2.5s;
-}
-
-.overlay{
+.tagline {
+  text-align: center;
+  line-height: 200px;
+  margin: auto;
   position: absolute;
+  top: 61%;
+  width: 100%;
+  color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  text-overflow: elipsis;
+  -webkit-animation: text-fade 2.5s;
+}
+
+
+.overlay {
+  position: fixed;
   top:0;
   left:0;
   width:100%;
@@ -94,7 +61,7 @@ h1 {
 }
 
 /* Log in styles */
-#login{
+#login {
   width: 400px;
   margin: 0 auto;
   margin-top: 100px;
@@ -104,14 +71,14 @@ h1 {
   position: relative;
 }
 
-#login form{
-  //background:#f0f0f0;
+#login form {
+  color: white; 
+  margin-bottom: 30px;
   padding: 20px 20px;
 }
 
-input[type="email"], input[type="password"]{
+input[type="email"], input[type="password"] {
   width:92%;
-  background:#fff;
   background: transparent;
   margin-bottom:4%;
   border:1px solid #ccc;
@@ -119,15 +86,15 @@ input[type="email"], input[type="password"]{
   padding:4%;
   font-family:'Open Sans',sans-serif;
   font-size:95%;
-  color:#555;
 }
 
-input[type="submit"]{
+.sub-button {
   width:100%;
-  //background: #3399cc;
+  background-color: #FC2467;
   background: transparent;
   border:0;
   padding:4%;
+  background-color: #EA526F;
   color: #fff;
   cursor: pointer;
   transition: background .3s;
@@ -136,6 +103,6 @@ input[type="submit"]{
   border: 1px solid rgba(255,255,255,.2);
 }
 
-input[type="submit"]:hover{
+.sub-button:hover {
   background-color: tomato;
 }
