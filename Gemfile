@@ -32,9 +32,8 @@ gem 'gmaps4rails'
 
 
 # #paperclip
-# gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
-gem 'paperclip'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

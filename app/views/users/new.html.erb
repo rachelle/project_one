@@ -1,22 +1,20 @@
-<div class="banner">
-
-</div>
-
+<div class="banner"></div>
 <div class = "image overlay">
-    
-<h1 id="site-title">Sign Up</h1>
-    <div class="tagline"></div>
-    <!--Log-in Form-->
-    <div id="login">
-      <%= form_for @user do |f| %>
-     
-        <%= f.text_field :email, :placeholder => "email",  class: 'sign-input' %>
+  <h1 id="site-title">Sign Up</h1>
+  <div class="tagline"></div>
   
-        <%= f.text_field :name, :placeholder => "name", class: 'sign-input' %>
-        <%= f.text_field :password, :placeholder => "password", class: 'sign-input' %>
+<div id="login"> 
+  <%= form_for @user do |f| %>
+     
+    <%= f.text_field :email, :placeholder => "email",  class: 'sign-input' %>
+  
+    <%= f.text_field :name, :placeholder => "name", class: 'sign-input' %>
+    <%= f.text_field :password, :placeholder => "password", class: 'sign-input' %>
 
-        <%= f.submit "submit", class: "sub-button" %>
-   <% end %> 
-  </div>
+    <%= f.submit "submit", class: "sub-button" %>
+  <% end %> 
 </div>
-  <div class="foot-register"></div>
+  <div class="page-footer"></div>
+</div>
+
+

@@ -1,0 +1,14 @@
+<div class="login-banner"></div>
+<div class = "login-overlay">
+  
+<div id="login-form"> 
+ 
+  <%= form_tag sessions_path do %> 
+    <%= label_tag :email %> 
+    <%= text_field_tag :email, params[:email] %>
+    <%= label_tag :password %> 
+    <%= text_field_tag :password, params[:password] %>
+    <%= submit_tag "Login", class: "sub-button" %>
+  <% end %> 
+</div>
+</div>
