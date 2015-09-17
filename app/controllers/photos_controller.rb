@@ -45,13 +45,11 @@ class PhotosController < ApplicationController
   private
  
   def photo_params
-    params.require(:photo).permit(:title, :image, :caption)
+    params.require(:photo).permit(:image, :caption)
   end
 
   def check_logged_in
   end
 
-  def set_photo
-    @photo = Photo.find(params[:id])
-  end
+ 
 end
