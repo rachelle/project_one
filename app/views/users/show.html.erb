@@ -9,33 +9,22 @@
     </ul>
   </div>
 </nav>
-
-
 <!-- users information -->
 <div class="user-content">
   <%= image_tag @user.avatar.url %> 
   <%= image_tag @user.avatar.url(:medium) %>
 </div>
-
+<!-- a navigation bar for users personal features for editing, adding, and deleting -->
 <nav id="navBottom">
-    <ul id="navTxtBtm center-align">
-      <li><%= link_to 'edit profile', edit_user_path %></li>
-      <li><%= link_to 'add photo', new_photo_path %>
-      <li id="posts"><%= link_to 'delete account', user_path(current_user), method: :delete, data: {confirm: 'Are you sure?'} %> </li>
-    </ul>
-  </nav>
- 
-
- 
-
-
-
-
+  <ul id="navTxtBtm center-align">
+    <li><%= link_to 'edit profile', edit_user_path %></li>
+    <li><%= link_to 'add photo', new_photo_path %>
+    <li id="posts"><%= link_to 'delete account', user_path(current_user), method: :delete, data: {confirm: 'Are you sure?'} %> </li>
+  </ul>
+</nav>
+<!-- A feed for all current users photos in their page -->
 <div class="photo-feed"> 
   <% @user_photos.each do |photo| %> 
-
-  <%= link_to image_tag(photo.image.url(:medium)), photo_path(photo.id) %> 
-<% end %> 
-
-
+    <%= link_to image_tag(photo.image.url(:medium)), photo_path(photo.id) %> 
+  <% end %> 
 </div>
