@@ -1,0 +1,18 @@
+<nav>
+  <div class="nav-wrapper teal accent-4">
+    <a href="#" class="brand-logo">Charms</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><%= link_to 'Home', user_path(current_user) %></li>
+      <li><%= link_to 'Explore', photos_path %></li>  
+      <li><%= link_to 'Search', users_path %></li>
+      <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+    </ul>
+  </div>
+</nav>
+<div class="photo-gallery">
+  <% @photos.each do |photo| %> 
+
+    <%= link_to image_tag(photo.image.url(:medium)), photo_path(photo.id) %> 
+
+  <% end %> 
+</div>
