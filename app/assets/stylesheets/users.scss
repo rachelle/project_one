@@ -175,15 +175,9 @@ input[type="email"], input[type="password"] {
   display: block;
 }
 
-// ul:after {
-//   clear: both;
-//   content: ".";
-//   display: block;
-//   height: 0;
-//   visibility: hidden;
-//   font-size: 0.01em !important;
-//   line-height: 0.01em !important;
-// }
+.feed-links {
+  margin-left: 30px;
+}
 
 .feed-box {
   list-style:none;

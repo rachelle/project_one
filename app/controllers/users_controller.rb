@@ -29,13 +29,14 @@
   end
 
   def update
-    # @user = User.find(params[:id])
-    # if @user = @user.update_attributes(user_params)
-    # flash[:success] = "Location Updated"
-    #   redirect_to user_path(current_user)
-    # else
-    #   render 'edit'
-    # end
+    @user = User.find(params[:id])
+    if @user.save 
+      @user = @user.update_attributes(user_params)
+    flash[:success] = "Location Updated"
+      redirect_to user_path(current_user)
+    else
+      render 'edit'
+    end
   end
 
   def destroy 

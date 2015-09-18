@@ -12,7 +12,7 @@
 <!-- poloaroid image viewer -->
 <div class="photo-container center-align">
  <div class="photo-wrapper">
-   <section class= "polaroid z-depth-2"> <%= image_tag @photo.image, class: 'image-border' %>
+   <section class= "polaroid z-depth-2"> <%= image_tag (@photo.image.url(:medium)), class: 'image-border' %>
     <br/>
     <span class="review"><%= @photo.content %></span>
    </section>
@@ -21,7 +21,7 @@
  <!-- section for the comments/form -->
  <div class="review-wrapper"> 
   <div class = "col s8">
-    <h5>comments:</h5>
+  
     <% if current_user %>
       <!-- nested form for photos/:id/reviews/new -->
       <%= form_for [@photo, @review], class: 'review-form' do |f| %> 

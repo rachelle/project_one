@@ -1,2 +1,20 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="edit-banner"></div>
+<div class = "image overlay">
+  <h1 id="site-title">Edit Profile</h1>
+  <div class="tagline"></div>
+  
+<div id="login"> 
+  <%= form_for (@user), :html => { :multipart => true } do |f| %>
+     
+    <%= f.text_field :email, :placeholder => "email",  class: 'sign-input' %>
+  
+    <%= f.text_field :name, :placeholder => "name", class: 'sign-input' %>
+    <%= f.text_field :password, :placeholder => "password", class: 'sign-input' %>
+
+    <%= f.file_field :avatar, :placeholder => "profile photo", class: 'avatar-input' %>
+
+    <%= f.submit "submit", class: "sub-button" %>
+  <% end %> 
+</div>
+  <div class="page-footer"></div>
+</div>
