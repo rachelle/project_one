@@ -51,6 +51,41 @@ body {
   margin-bottom: 30px;
 }
 
-.review {
+.review-wrapper {
+  width: 500px;
+  text-align: center; 
+  margin: 0 auto; 
+  margin-left: 470px;
+}
 
+.review-form {
+  text-align: center; 
+  margin: 0 auto;
+  margin-left: 100px;
+
+}
+
+.review-content {
+  text-align: center; 
+  margin: 0 auto;
+}
+
+.review-details {
+  border: 1px solid black;
+  height: 160px;
+  width: 630px;
+  margin-top: 30px;
+  margin-left: 410px;
+  text-align: center; 
+}
+
+.user-avatar {
+  float: left;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.avatar-name {
+  margin-top: 0px;
+  margin-left: 40px;
 }

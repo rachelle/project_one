@@ -9,23 +9,22 @@
     </ul>
   </div>
 </nav>
+<!-- poloaroid image viewer -->
 <div class="photo-container center-align">
  <div class="photo-wrapper">
-   <section class= "polaroid z-depth-2"> 
-    <%= image_tag @photo.image, class: 'image-border' %>
+   <section class= "polaroid z-depth-2"> <%= image_tag @photo.image, class: 'image-border' %>
     <br/>
     <span class="review"><%= @photo.content %></span>
    </section>
  </div>
-
-   
 </div>
-<div class="review-container"> 
+ <!-- section for the comments/form -->
+ <div class="review-wrapper"> 
   <div class = "col s8">
     <h5>comments:</h5>
     <% if current_user %>
       <!-- nested form for photos/:id/reviews/new -->
-      <%= form_for [@photo, @review], class: 'center-align' do |f| %> 
+      <%= form_for [@photo, @review], class: 'review-form' do |f| %> 
         Add a comment:
         <%= f.text_field :content, class: 'form-control' %> 
         <br>
@@ -35,27 +34,36 @@
   </div>
   </div>
   <!-- implemented a row of reviews -->
-  <div class="row panel panel-default">
+  <div class="review-content">
     <% @reviews.each do |review| %>
       <div class='comments-header panel-heading'>
-        <div class='comment-details'>
-          <%= image_tag review.user.avatar.url(:thumb), class: 'img-circle user-avatar' %>
+        <div class='review-details'>
+          <%= link_to review.user.name, user_path(review.user.id), class: 'left avatar-name' %>
+          <br/>
+          <%= image_tag review.user.avatar.url(:thumb), class: 'user-avatar' %>
           <!-- current user is only allowed to comment on the webpage -->
-          <%= link_to review.user.name, user_path(review.user.id) %>
+          
           <% if current_user.id == review.user.id %>
-            <%= link_to 'X', photo_review_path(@photo.id, review.id), method: :delete, class: 'btn btn-danger btn-sm pull-right' %>
+            <%= link_to 'X', photo_review_path(@photo.id, review.id), method: :delete, class: 'right' %>
           <% end %>
           <br>
           <!-- converts the created_at to when the review was created --> 
+          <%= review.content %>
+          <br/>
           <%= time_ago_in_words(review.created_at) %> ago
         </div>
       </div>
       <div class="comments panel-body">
         <p>
-        <%= review.content %>
+       
         </p>
         <br>
       </div>
     <% end %>
   </div>
 </div> 
+
+
+
+
+
