@@ -10,8 +10,15 @@
   </div>
 </nav>
 <div class="photo-container center-align">
-  <%= image_tag @photo.image %>
-  <h4><%= @photo.content %></h4> 
+ <div class="photo-wrapper">
+   <section class= "polaroid z-depth-2"> 
+    <%= image_tag @photo.image, class: 'image-border' %>
+    <br/>
+    <span class="review"><%= @photo.content %></span>
+   </section>
+ </div>
+
+   
 </div>
 <div class="review-container"> 
   <div class = "col s8">
@@ -25,6 +32,7 @@
         <%= f.submit 'Add Comment', class: 'btn btn-success' %> 
       <% end %>
     <% end %>
+  </div>
   </div>
   <!-- implemented a row of reviews -->
   <div class="row panel panel-default">
