@@ -1,5 +1,5 @@
 <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper teal accent-4">
     <a href="#" class="brand-logo">Charms</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><%= link_to 'Home', user_path(current_user) %></li>
@@ -9,3 +9,49 @@
     </ul>
   </div>
 </nav>
+
+<div class="slider">
+  <ul class="slides">
+    <li>
+      <%= image_tag("cute.jpg", :class => "slide-show ") %> 
+      <!-- searching image -->
+      <div class="caption center-align">
+        <br/><br/><br/>
+        <h4 class="slide-one word-text pink lighten-2">Use Charms to find the services you're looking from hair colorist, makeup artists, and barbers.</h4>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("hipster.jpg", :class => "slide-show ") %>  <!-- random image -->
+      <div class="caption left-align">
+        <h4>Discover new local businesses</h4>
+        <h5 class="light grey-text text-lighten-3"></h5>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("ombre-hombre.jpg", :class => "slide-show") %>    <!-- random image -->
+      <div class="caption center-align">
+         <h2 class="light grey-text text-lighten-3">Finding your style</h2>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("makeup.jpeg", :class => "slide-show") %> 
+        <!-- make-up artist image  -->
+      <div class="caption left-align">
+        <h2 class="light grey-text text-lighten-3">Getting the look you want</h2>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="user-banner">
+  <div class="user-list center-align">
+    <h4 class="users-text">Browse Users</h4>
+  </div>
+</div>
+
+</body>
+<script>
+  $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+    });
+</script>
+</html>

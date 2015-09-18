@@ -139,14 +139,6 @@ input[type="email"], input[type="password"] {
     text-align: center;
 }
 
-#posts {
-    width: 23.3%;
-    float: left;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border-right: 0.063em #1e242a solid; /*1px*/
-}
-
 #followers {
     width: 22.3%;
     float: left;
@@ -223,3 +215,13 @@ li {
 .feed-text {
   color: #FF3C00;
 }
+
+.nav-links {
+  margin-left: 200px; 
+}
+
+.users-text {
+  color: #F56D8B;
+  margin-top :10px;
+}
+
