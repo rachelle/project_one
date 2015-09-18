@@ -4,7 +4,7 @@
   <div class="tagline"></div>
   
 <div id="login"> 
-  <%= form_for (@user), :html => { :multipart => true } do |f| %>
+  <%= form_for (@user) do |f| %>
      
     <%= f.text_field :email, :placeholder => "email",  class: 'sign-input' %>
   
@@ -13,6 +13,7 @@
     <%= f.text_field :business_name, :placeholder => 'buisness name', class: 'sign-input' %>
     <%= f.text_field :location, :placeholder => 'location', class: 'sign-input' %> 
     <%= f.text_field :services, :placeholder => 'services', class: 'sign-input' %>  
+    <%= f.text_field :contact_number, :placeholder => 'phone number', class: 'sign-input' %> 
     <%= f.file_field :avatar, :placeholder => "profile photo", class: 'avatar-input' %>
 
     <%= f.submit "submit", class: "sub-button" %>

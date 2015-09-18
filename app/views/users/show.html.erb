@@ -11,7 +11,21 @@
 </nav>
 <!-- users information -->
 <div class="user-content">
-  <%= image_tag @user.avatar.url(:medium) %>
+  <ul class="collection with-header user-collect">
+    <li class="collection-header">
+      <h4><img class="business-icon" src="/images/business-icon.png"> Business: <%= @user.business_name %></h4> 
+      <h5><%= @user.services %></h5> 
+      <%= image_tag @user.avatar.url %> 
+      <h5 class="profile-name"><%= @user.name %></h5>
+      <h6><%= @user.services %></h6>
+      <h6><img class="phone-icon" src="/images/phone-icon.png"><%= @user.contact_number %></h6>
+      <h6><img class="business-icon" src="/images/imac.png"></h6> 
+    </li>
+
+    <li class="collection-item">Alvin</li>
+    <li class="collection-item">Alvin</li>
+    <li class="collection-item">Alvin</li>
+  </ul>
 </div>
 <!-- a navigation bar for users personal features for editing, adding, and deleting -->
 <nav id="navBottom">
@@ -37,4 +51,4 @@
     <% end %> 
   </ul>
 </div>
-<div class="clear-fix"></div>
+
