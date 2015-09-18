@@ -22,9 +22,20 @@
     <li id="posts"><%= link_to 'delete account', user_path(current_user), method: :delete, data: {confirm: 'Are you sure?'} %> </li>
   </ul>
 </nav>
-<!-- A feed for all current users photos in their page -->
-<div class="photo-feed"> 
-  <% @user_photos.each do |photo| %> 
-    <%= link_to image_tag(photo.image.url(:medium)), photo_path(photo.id) %> 
-  <% end %> 
+<!-- user feed  -->
+<div class="content">
+  <h4 class="feed-text center-align">Photo Feed</h4>
+  <ul id="feed-box">
+    <% @user_photos.each do |photo| %> 
+      <li>
+        <div class="photo-wrapper">
+          <div class="photo">
+            <%= link_to image_tag(photo.image.url(:medium)), photo_path(photo.id), class: "feed-links" %>
+          </div>
+          <div class="text bottom"><%= photo.content %></div>
+        </div>
+      </li>
+    <% end %> 
+  </ul>
 </div>
+<div class="clear-fix"></div>

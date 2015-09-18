@@ -44,13 +44,13 @@
           <!-- current user is only allowed to comment on the webpage -->
           
           <% if current_user.id == review.user.id %>
-            <%= link_to 'X', photo_review_path(@photo.id, review.id), method: :delete, class: 'right' %>
+            <%= link_to 'delete', photo_review_path(@photo.id, review.id), method: :delete, class: 'right comment-delete' %>
           <% end %>
           <br>
           <!-- converts the created_at to when the review was created --> 
-          <%= review.content %>
+          <p class="review-text"><%= review.content %></p>
           <br/>
-          <%= time_ago_in_words(review.created_at) %> ago
+          <span class="time-review right"><%= time_ago_in_words(review.created_at) %> ago </span>
         </div>
       </div>
       <div class="comments panel-body">

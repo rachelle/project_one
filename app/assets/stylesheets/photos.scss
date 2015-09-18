@@ -56,6 +56,7 @@ body {
   text-align: center; 
   margin: 0 auto; 
   margin-left: 470px;
+  margin-bottom: 30px; 
 }
 
 .review-form {
@@ -74,7 +75,6 @@ body {
   border: 1px solid black;
   height: 160px;
   width: 630px;
-  margin-top: 30px;
   margin-left: 410px;
   text-align: center; 
 }
@@ -88,4 +88,25 @@ body {
 .avatar-name {
   margin-top: 0px;
   margin-left: 40px;
+}
+
+.comment-delete {
+  border: 1px solid #F56D8B;
+  width: 80px; 
+  background-color: #F56D8B;
+  height: 30px;
+}
+
+.comment-delete {
+  color: white;
+  margin-top: 35px;
+  margin-right: 20px;
+}
+
+a:link {
+  color: white;
+}
+
+.time-review {
+  margin-right: 10px;
 }

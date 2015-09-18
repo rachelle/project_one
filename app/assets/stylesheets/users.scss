@@ -162,8 +162,70 @@ input[type="email"], input[type="password"] {
     box-sizing: border-box;
 }
 
-li > a {
-    position: relative;
-    position: block;
-    margin-left: 20px;
+/* feed  */
+
+.content {
+  margin: 0 auto;
+  padding: 5px;
+  clear: left;
+}
+
+.feed-box {
+  margin: 0;
+  display: block;
+}
+
+// ul:after {
+//   clear: both;
+//   content: ".";
+//   display: block;
+//   height: 0;
+//   visibility: hidden;
+//   font-size: 0.01em !important;
+//   line-height: 0.01em !important;
+// }
+
+.feed-box {
+  list-style:none;
+  display: inline;
+  position: relative;
+  float: left;
+  width: 200px;
+  padding: 7px 0 25px 0; 
+}
+
+li {
+  list-style:none;
+  display: inline;
+  position: relative;
+  float: left;
+}
+
+.photo-wrapper {
+  position: relative;
+  text-align:center;
+  margin: 0 20px 10px;
+}
+
+.text {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 25px;
+  color: #333;
+  opacity: 0;
+  transition: opacity .1s ease-out 0.1s;
+  pointer-events: none;
+}
+
+.photo {
+  width: 300px;
+  height: 300px;
+}
+
+.clear-fix {
+  clear: both;
+}
+
+.feed-text {
+  color: #FF3C00;
 }
