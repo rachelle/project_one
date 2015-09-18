@@ -29,7 +29,7 @@
           <!-- current user is only allowed to comment on the webpage -->
           <%= link_to review.user.name, user_path(review.user.id) %>
         <% if current_user.id == review.user.id %>
-          <%= link_to 'X', photo_comment_path(@photo.id, review.id), method: :delete, class: 'btn btn-danger btn-sm pull-right' %>
+          <%= link_to 'X', photo_review_path(@photo.id, review.id), method: :delete, class: 'btn btn-danger btn-sm pull-right' %>
         <% end %>
         <br>
         <!-- converts the created_at to when the comment was uploaded --> 
