@@ -1,18 +1,31 @@
+<nav>
+  <div class="nav-wrapper teal accent-4">
+    <a href="#" class="brand-logo">Charms</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><%= link_to 'Home', user_path(current_user) %></li>
+      <li><%= link_to 'Explore', photos_path %></li>  
+      <li><%= link_to 'Search', users_path %></li>
+      <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+    </ul>
+  </div>
+</nav>
 <div class="photo-container center-align">
   <%= image_tag @photo.image %>
   <h4><%= @photo.content %></h4> 
 </div>
 <div class="review-container"> 
-  <h5>comments:</h5>
-  <% if current_user %>
-    <!-- nested form for photos/:id/reviews/new -->
-    <%= form_for [@photo, @review], class: 'center-align' do |f| %> 
-      Add a comment:
-      <%= f.text_field :content, class: 'form-control' %> 
-      <br>
-      <%= f.submit 'Add Comment', class: 'btn btn-success' %> 
+  <div class = "col s8">
+    <h5>comments:</h5>
+    <% if current_user %>
+      <!-- nested form for photos/:id/reviews/new -->
+      <%= form_for [@photo, @review], class: 'center-align' do |f| %> 
+        Add a comment:
+        <%= f.text_field :content, class: 'form-control' %> 
+        <br>
+        <%= f.submit 'Add Comment', class: 'btn btn-success' %> 
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
   <!-- implemented a row of reviews -->
   <div class="row panel panel-default">
     <% @reviews.each do |review| %>
