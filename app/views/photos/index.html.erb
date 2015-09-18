@@ -9,20 +9,18 @@
     </ul>
   </div>
 </nav>
-
-
-
-  <!-- user feed  -->
+ <!-- photo feed  -->
 <div class="content">
   <h4 class="feed-text center-align">Photo Gallery</h4>
   <ul id="feed-box">
-  <% @photos.each do |photo| %> 
+    <% @photos.each do |photo| %> 
       <li>
         <div class="photo-wrapper">
           <div class="photo">
-              <%= link_to image_tag(photo.image.url(:medium)), photo_path(photo.id) %>  class: "feed-links" %>
+            <%= link_to image_tag(photo.image.url(:medium)), photo_path(photo.id), class: "photo-gallery z-depth-2" %> 
+            <h6 class="caption-photo z-depth-1"><%= photo.content %></h6> 
           </div>
-          <div class="text bottom"><%= photo.content %></div>
+          <div class="text bottom"><h6 class="caption-photo"></h6></div>
         </div>
       </li>
     <% end %> 

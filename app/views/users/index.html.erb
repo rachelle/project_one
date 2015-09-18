@@ -13,31 +13,31 @@
 <div class="slider">
   <ul class="slides center-align">
     <li>
-      <%= image_tag("cute.jpg", :class => "slide-show ") %> 
+      <%= image_tag("beauty_coffee.jpg", :class => "slide-show ") %> 
       <!-- searching image -->
       <div class="caption center-align">
         <br/><br/><br/>
-        <h4 class="slide-one word-text pink lighten-2">Use Charms to find the services you're looking from hair colorist, makeup artists, and barbers.</h4>
+        <h4 class="slide-one word-text deep-orange lighten-2">Search for businesses</h4>
       </div>
     </li>
     <li>
-      <%= image_tag("hipster.jpg", :class => "slide-show ") %>  <!-- random image -->
-      <div class="caption left-align">
-        <h4>Discover new local businesses</h4>
+      <%= image_tag("spa-day.jpg", :class => "slide-show ") %>  <!-- random image -->
+      <div class="caption word-text">
+        <h3>Choose a place to relax</h3>
         <h5 class="light grey-text text-lighten-3"></h5>
       </div>
     </li>
     <li>
-      <%= image_tag("ombre-hombre.jpg", :class => "slide-show") %>    <!-- random image -->
+      <%= image_tag("ombre-blue.jpg", :class => "slide-show") %>    <!-- random image -->
       <div class="caption center-align">
          <h2 class="light grey-text text-lighten-3">Finding your style</h2>
       </div>
     </li>
     <li>
-      <%= image_tag("makeup.jpeg", :class => "slide-show") %> 
+      <%= image_tag("barber-place.png", :class => "slide-show") %> 
         <!-- make-up artist image  -->
       <div class="caption left-align">
-        <h2 class="light grey-text text-lighten-3">Getting the look you want</h2>
+        <h2 class="light grey-text text-lighten-3">Discovering Unique Places</h2>
       </div>
     </li>
   </ul>
@@ -47,7 +47,22 @@
     <h4 class="users-text">Browse Users</h4>
   </div>
 </div>
-
+<!-- users index -->
+<div class="content">
+ <ul id="feed-box">
+  <% @users.each do |user| %> 
+      <li>
+        <div class="photo-wrapper">
+          <div class="photo">
+              <%= link_to image_tag(user.avatar.url(:medium)), user_path(user.id) %>  class: "feed-links" %>
+          </div>
+          <div class="text bottom"><%= user.business_name %></div>
+        </div>
+      </li>
+    <% end %> 
+  </ul>
+</div>
+<div class="clear-fix"></div>
 </body>
 <script>
   $(document).ready(function(){

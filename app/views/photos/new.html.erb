@@ -13,13 +13,13 @@
 <!-- form for adding a photo -->
 </div> 
 <div class="photo-form container center-align">
-  <h3>Add Photo</h3> 
+  <h3 class='photo-title'>Add Photo</h3> 
   <div class="row">
-    <div class="col s8">
-      <%= form_for @photo, html: { multipart: true } do |f| %> 
+    <div class="col s6">
+      <%= form_for @photo, html: { multipart: true }, class: "photo-line center-align" do |f| %> 
         <%= f.text_field :content, :placeholder => "caption" %> 
-        <%= f.file_field :image %>
-        <%= f.submit "Post", class: "photo-btn" %> 
+        <%= f.file_field :image, class: "photo-image" %><br/>
+        <%= f.submit "Post", class: "photo-btn center-align" %> 
       <% end %> 
     </div>
   </div>
