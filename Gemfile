@@ -30,6 +30,8 @@ gem 'materialize-sass'
 
 gem 'gmaps4rails'
 
+gem 'underscore-rails'
+
 
 # #paperclip
 gem "paperclip", "~> 4.3"
