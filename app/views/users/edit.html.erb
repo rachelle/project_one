@@ -19,12 +19,13 @@
    
     <%= f.hidden_field :lat, id: "map_lat" %> 
     <%= f.hidden_field :lng, id: "map_lng" %> 
-
+  <div id="map-container">
      <div id="map"></div>
+
 
     <%= f.submit "submit", class: "sub-button" %>
   <% end %> 
-
+</div>
 
 </div>
   <div class="clear-fix"></div>
