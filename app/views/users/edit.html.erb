@@ -16,9 +16,25 @@
     <%= f.text_field :contact_number, :placeholder => 'phone number', class: 'sign-input' %> 
     <%= f.file_field :avatar, :placeholder => "profile photo", class: 'avatar-input' %>
 
+    <div id="map"></div>
+
+    <%= f.hidden_field :lat, id: "map_lat" %> 
+    <%= f.hidden_field :lng, id: "map_lng" %> 
+
     <%= f.submit "submit", class: "sub-button" %>
   <% end %> 
+
 </div>
   <div class="clear-fix"></div>
 </div>
+
+<script> 
+  $(document).ready(function(){
+    var user = <%= @user.to_json.html_safe %> // pass ruby variable to javascript 
+    gmap_form(user);
+  }); 
+</script>
+  }
+
+
 
