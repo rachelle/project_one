@@ -5,6 +5,7 @@
   
 <div id="login"> 
   <%= form_for (@user) do |f| %>
+ 
      
     <%= f.text_field :email, :placeholder => "email",  class: 'sign-input' %>
   
@@ -16,15 +17,14 @@
     <%= f.text_field :contact_number, :placeholder => 'phone number', class: 'sign-input' %> 
     <%= f.file_field :avatar, :placeholder => "profile photo", class: 'avatar-input' %>
 
-   
-    <%= f.hidden_field :lat, id: "map_lat" %> 
-    <%= f.hidden_field :lng, id: "map_lng" %> 
-  <div id="map-container">
-     <div id="map"></div>
+    
+
+
+
 
 
     <%= f.submit "submit", class: "sub-button" %>
-  <% end %> 
+   <% end %> 
 </div>
 
 </div>

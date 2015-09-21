@@ -6,6 +6,7 @@
         marker.lat user.latitude
         marker.lng user.longitude
     end
+  end
 
   def new
     @user = User.new
