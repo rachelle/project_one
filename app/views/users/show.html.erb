@@ -23,6 +23,7 @@
     </li>
 
     <li class="collection-item"></li>
+      <div id="map"></div>
     <li class="collection-item"></li>
     <li class="collection-item"></li>
   </ul>
@@ -52,4 +53,11 @@
   </ul>
 </div>
 <div class='clear-fix'></div>
+
+<script> 
+ $(document).ready(function){
+    var user = <%= @user.to_json.html_safe %> // pass ruby variable to javascript 
+    gmap_show(user);
+  });
+</script>  
 
