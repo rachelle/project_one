@@ -49,6 +49,8 @@
           <div class="text bottom"><%= photo.content %></div>
         </div>
       </li>
+      <li>
+        <div id="map"></div>
     <% end %> 
   </ul>
 </div>
@@ -59,5 +61,10 @@
     var user = <%= @user.to_json.html_safe %> // pass ruby variable to javascript 
     gmap_show(user);
   });
+
+  var markers = handler.addMarkers(<%=raw @hash.to_json %>);
+
+
+ 
 </script>  
 

@@ -13,7 +13,7 @@
 //= require jquery
 //= require materialize-sprockets
 //= require jquery_ujs
-//= require underscore
+//= require Underscore
 //= require gmaps/google
 //= require turbolinks
 //= require_tree .
@@ -30,7 +30,7 @@ function gmap_show(user) {
           "lat": user.lat,  //coordinates from paramater user
           "lng": user.lng, 
           "picture": { //setup marker icon
-          "url": 'http://www.planet-action.org/img/2009/interieur/icons/orange-dot.png',
+          "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
           "width": 32, 
           "height": 32
         },
@@ -53,7 +53,7 @@ function gmap_form(user) {
           "lat": user.lat, 
           "lng": user.lng, 
           "picuture": {
-            "url": 'http://www.planet-action.org/img/2009/interieur/icons/orange-dot.png',
+            "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
             "width": 32, 
             "height": 32
           },

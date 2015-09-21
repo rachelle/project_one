@@ -32,8 +32,7 @@ gem 'gmaps4rails'
 
 gem 'underscore-rails'
 
-
-# #paperclip
+#paperclip
 gem "paperclip", "~> 4.3"
 
 # Use Unicorn as the app server
