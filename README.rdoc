@@ -1,6 +1,4 @@
-## Photosnap!
-
-Heroku Link: https://powerful-waters-2991.herokuapp.com/users
+Charms
 
 Charms is an application that provides an easier way users to find businesses to their pampering. They can find businesses through the search bar and the service that the business provides. Charms the business owner can upload their own photos to their proflie. They can display their work in order to get future clients. 
 
