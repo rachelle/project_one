@@ -97,4 +97,22 @@ function gmap_form(user) {
     document.getElementById("map_lat").value = event.latLng.lat();
     document.getElementById("map_lng").value = event.latLng.lng();
   });
-}
+
+  $('#star').raty ({
+    readOnly: true, 
+    score: <%= @review.average_rating %> 
+    path: '/assets'
+
+  });
+
+ $('#user_star').raty({
+    score: <%= @rating.score %>,
+    path: '/assets',
+    click: function(score, evt) {
+      $.ajax({
+        url: '/ratings/' + <%= @rating.id %>,
+        type: 'PATCH',
+        data: { score: score }
+      });
+    }
+  });

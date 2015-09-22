@@ -47,6 +47,9 @@
         <br/>
         <%= image_tag review.user.avatar.url(:thumb), class: 'user-avatar' %>
         <!-- current user is only allowed to comment on the webpage -->
+      <div id="star"></div>
+      <p>Your Rating</p>
+      <div id="user_star"></div>
           
         <% if current_user.id == review.user.id %>
           <%= link_to 'delete', photo_review_path(@photo.id, review.id), method: :delete, class: 'right comment-delete' %>
