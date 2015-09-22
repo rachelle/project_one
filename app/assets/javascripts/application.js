@@ -43,6 +43,13 @@ function gmap_show(user) {
   });
 }
 
+/* update form attributes with given coordinates */
+function update_form(user) {
+  $('location_attributes_latitude').value(user.lat()); 
+  $('location_attributes_longitude').value(user.lng());
+  $('location_attributes_gmaps_zoom').value(Gmaps.map.map.getZoom());
+}
+
 function gmap_form(user) {
   handler = Gmaps.build('Google');    // map init
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){

@@ -32,6 +32,8 @@ gem 'gmaps4rails'
 
 gem 'underscore-rails'
 
+gem 'searchkick'
+
 #paperclip
 gem "paperclip", "~> 4.3"
 
