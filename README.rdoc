@@ -1,28 +1,15 @@
-== README
+## Photosnap!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Heroku Link: https://powerful-waters-2991.herokuapp.com/users
 
-Things you may want to cover:
+Charms is an application that provides an easier way users to find businesses to their pampering. They can find businesses through the search bar and the service that the business provides. Charms the business owner can upload their own photos to their proflie. They can display their work in order to get future clients. 
 
-* Ruby version
+Technologies
 
-* System dependencies
+* [Ruby on Rails] 
+* [CSS & SASS]
+* [HTML5] 
+* [gmaps4rails]
+* [materialize]
+* [paperclip]
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
