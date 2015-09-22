@@ -41,7 +41,8 @@ class ReviewsController < ApplicationController
     redirect_to photo_path(@photo.id)
   end
 
-  def avarage_rating 
+  def average_rating 
+
     ratings.sum(:score) / ratings.size
   end
 
@@ -54,5 +55,7 @@ class ReviewsController < ApplicationController
   def set_photo
     @photo = Photo.find(params[:photo_id])
   end
+
+
 
 end

@@ -6,7 +6,5 @@ class Review < ActiveRecord::Base
 
   validates :content, presence: true
 
-  def average_rating 
-    ratings.sum(:score) / ratings.size
-  end
+ 
 end

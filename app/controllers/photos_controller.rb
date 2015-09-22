@@ -26,8 +26,6 @@ class PhotosController < ApplicationController
     end
   end
 
-  
-
   def edit
     @photo = Photo.find(params[:id])
   end
@@ -46,6 +44,8 @@ class PhotosController < ApplicationController
     @photo.destroy
       redirect_to users_path(current_user)
   end
+
+
 
   private
  

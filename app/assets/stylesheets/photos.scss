@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
   margin: 0 auto; 
-
 }
 
 .photo-btn {
@@ -134,5 +133,13 @@ a:link {
 .review {
   font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 22px;
+}
+
+#star {
+  background:url('images/star-off.png');
+}
+
+#user_star {
+  background:url('images/star-on.png');
 }
 
