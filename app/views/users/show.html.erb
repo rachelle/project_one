@@ -15,11 +15,12 @@
     <li class="collection-header">
       <h4><img class="business-icon" src="/images/business-icon.png"> Business: <%= @user.business_name %></h4> 
       <h5>Service: <%= @user.services %></h5>
-      <h5><%= @user.services %></h5> 
+    
       <%= image_tag @user.avatar.url(:thumb)%> 
       <h5 class="profile-name"><%= @user.name %></h5>
-      <h6><%= @user.services %></h6>
-      <h5><img class="phone-icon" src="/images/phone-icon.png"><%= @user.contact_number %> </h5>
+      
+      <h5 class="user-text"><img class="phone-icon" src="/images/phone-icon.png"><%= @user.contact_number %></h5>
+
       <h5><img class="business-icon" src="/images/imac.png"> lashes.com</h5> 
       <h5><%= @user.address %> 234 Palm St. , Los Angeles, 90120</h5>
      
