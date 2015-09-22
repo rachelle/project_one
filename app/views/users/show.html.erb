@@ -18,16 +18,22 @@
       <%= image_tag @user.avatar.url(:thumb)%> 
       <h5 class="profile-name"><%= @user.name %></h5>
       <h6><%= @user.services %></h6>
-      <h6><img class="phone-icon" src="/images/phone-icon.png"><%= @user.contact_number %></h6>
-      <h6><img class="business-icon" src="/images/imac.png"></h6> 
+      <h5><img class="phone-icon" src="/images/phone-icon.png"><%= @user.contact_number %> 626 - 234 -5678</h5>
+      <h5><img class="business-icon" src="/images/imac.png"> lashes.com</h5> 
+
     </li>
 
-    <li class="collection-item"></li>
-      <div id="map"></div>
+    <li class="collection-item">
+
+
+    
+
+    </li>
     <li class="collection-item"></li>
     <li class="collection-item"></li>
   </ul>
 </div>
+
 <!-- a navigation bar for users personal features for editing, adding, and deleting -->
 <nav id="navBottom">
   <ul id="navTxtBtm center-align">
@@ -54,6 +60,7 @@
     <% end %> 
   </ul>
 </div>
+
 <div class='clear-fix'></div>
 
 <script> 

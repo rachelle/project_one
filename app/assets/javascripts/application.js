@@ -19,70 +19,74 @@
 //= require_tree .
 
 function gmap_show(user) {
-  if ((user.lat === null) || user.lng === null) ) { // validation check if coordinates are there
-     return 0; 
+  if ((user.lat == null) || (user.lng == null) ) {    // validation check if coordinates are there
+    return 0;
   }
 
-  handler = Gmaps.build('Google'); // map  init
+  handler = Gmaps.build('Google');    // map init
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers({ // put marker method
-        {
-          "lat": user.lat,  //coordinates from paramater user
-          "lng": user.lng, 
-          "picture": { //setup marker icon
-          "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-          "width": 32, 
+    markers = handler.addMarkers([    // put marker method
+      {
+        "lat": user.lat,    // coordinates from parameter company
+        "lng": user.lng,
+        "picture": {    // setup marker icon
+          "url": 'http://www.planet-action.org/img/2009/interieur/icons/orange-dot.png',
+          "width":  32,
           "height": 32
         },
-        "infowindow": "<b>" + user.name + "</b>" + user.address 
-
+        "infowindow": "<b>" + user.name + "</b> " + user.address 
       }
-    }); 
-    handler.bounds.extendWith(markers); 
-    handler.fitMapToBounds(); 
-    handler.getMap().setZoom(12); // set the default zoom of the map
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(12);    // set the default zoom of the map
   });
 }
 
 function gmap_form(user) {
-  handler = Gmaps.build('Google'); // map init
+  handler = Gmaps.build('Google');    // map init
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    if (company && user.lat && user.lng) { // statement check - new or edit view 
-      markers = handler.addMarkers([ // print existent marker 
+    if (user && user.lat && user.lng) {    // statement check - new or edit view
+      markers = handler.addMarkers([    // print existent marker
         {
-          "lat": user.lat, 
-          "lng": user.lng, 
-          "picuture": {
-            "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-            "width": 32, 
+          "lat": user.lat,
+          "lng": user.lng,
+          "picture": {
+            "url": 'http://www.planet-action.org/img/2009/interieur/icons/orange-dot.png',
+            "width":  32,
             "height": 32
           },
-          "infowindow": "<b>" + user.name + "</b>" + user.address
+          "infowindow": "<b>" + user.name + "</b> " + user.address
         }
-      }); 
-      handler.bounds.extendWith(markers); 
+      ]);
+      handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
-      handler.getMap().setZoom(6); 
+      handler.getMap().setZoom(12);
+    }
+    else {    // show the empty map
+      handler.fitMapToBounds();
+      handler.map.centerOn([52.10, 19.30]);
+      handler.getMap().setZoom(6);
     }
   });
 
-  var makerOnMap; 
+  var markerOnMap;
 
-  function placeMarker(location) { // simply method to put new marker on map
+  function placeMarker(location) {    // simply method for put new marker on map
     if (markerOnMap) {
-      markerOnMap.setPosition(location); 
+      markerOnMap.setPosition(location);
     }
     else {
-      markerOnMap = new google.map.Marker({
-        position: location, 
+      markerOnMap = new google.maps.Marker({
+        position: location,
         map: handler.getMap()
       });
     }
   }
 
-  google.maps.event.addListener(handler.getMap(), 'click', function(event) {
-    placeMarker(event.latlng); 
-    document.getElementById("map_lat").value = event.latlng.lat();
-    document.getElementById("map_lng").value = event.latlng.lng();
+  google.maps.event.addListener(handler.getMap(), 'click', function(event) {    // event for click-put marker on map and pass coordinates to hidden fields in form
+    placeMarker(event.latLng);
+    document.getElementById("map_lat").value = event.latLng.lat();
+    document.getElementById("map_lng").value = event.latLng.lng();
   });
-} 
+}

@@ -35,6 +35,8 @@ gem 'underscore-rails'
 #paperclip
 gem "paperclip", "~> 4.3"
 
+  gem 'rails_12factor', group: :production 
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -55,7 +57,7 @@ group :development do
 end
 
 
-  gem 'rails_12factor', group: :production 
-  gem 'thin'
-end
+
+
+
 
