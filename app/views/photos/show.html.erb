@@ -18,10 +18,10 @@
    </section>
  </div>
 </div>
- <!-- section for the comments/form -->
- <div class="review-wrapper"> 
+<!-- section for the comments/form -->
+<div class="review-wrapper"> 
   <div class = "col s8">
-  
+    
     <% if current_user %>
       <!-- nested form for photos/:id/reviews/new -->
       <%= form_for [@photo, @review], class: 'review-form' do |f| %> 
@@ -32,37 +32,36 @@
       <% end %>
     <% end %>
   </div>
-  </div>
-  <!-- implemented a row of reviews -->
-  <div class="review-content">
-    <% @reviews.each do |review| %>
-      <div class='comments-header panel-heading'>
-        <div class='review-details'>
-          <%= link_to review.user.name, user_path(review.user.id), class: 'left avatar-name' %>
-          <br/>
-          <%= image_tag review.user.avatar.url(:thumb), class: 'user-avatar' %>
-          <!-- current user is only allowed to comment on the webpage -->
+</div>
+  
+<!-- implemented a row of reviews -->
+<div class="review-content">
+  <% @reviews.each do |review| %>
+    <div class='comments-header panel-heading'>
+      <div class='review-details'>
+        <%= link_to review.user.name, user_path(review.user.id), class: 'left avatar-name' %>
+        <br/>
+        <%= image_tag review.user.avatar.url(:thumb), class: 'user-avatar' %>
+        <!-- current user is only allowed to comment on the webpage -->
           
-          <% if current_user.id == review.user.id %>
-            <%= link_to 'delete', photo_review_path(@photo.id, review.id), method: :delete, class: 'right comment-delete' %>
-          <% end %>
-          <br>
-          <!-- converts the created_at to when the review was created --> 
-          <p class="review-text"><%= review.content %></p>
-          <br/>
-          <span class="time-review right"><%= time_ago_in_words(review.created_at) %> ago </span>
-        </div>
-      </div>
-      <div class="comments panel-body">
-        <p></p>
-        <br>
-        </div>
+        <% if current_user.id == review.user.id %>
+          <%= link_to 'delete', photo_review_path(@photo.id, review.id), method: :delete, class: 'right comment-delete' %>
         <% end %>
+        <br>
+        <!-- converts the created_at to when the review was created --> 
+        <p class="review-text"><%= review.content %></p>
+        <br/>
+        <span class="time-review right"><%= time_ago_in_words(review.created_at) %> ago </span>
+      </div>
+    </div>
+    <div class="comments panel-body">
+      <p></p><br>
+    </div>
+  <% end %>
   <%= link_to "Delete Post", photo_path(@photo), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }, class: "btn btn-danger" %>
-
-
   </div>
 </div> 
+
 <div class="clear-fix"></div>
 <div class="page-footer"></div>
 

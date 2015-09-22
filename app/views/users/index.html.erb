@@ -47,14 +47,25 @@
     <h4 class="users-text">Browse Users</h4>
   </div>
 </div>
+
+<!-- Search Bar for User Services -->
+<div class="searchbar-wrapper">
+  <% form_tag users_path, :method => 'get' do %> 
+    <p> 
+      <%= text_field_tag :search, params[:search] %> 
+      <%= submit_tag "Search", :hair => nill %> 
+    </p> 
+  <% end %> 
+</div>
+
 <!-- users index -->
 <div class="content">
- <ul id="feed-box">
-  <% @users.each do |user| %> 
+  <ul id="feed-box">
+    <% @users.each do |user| %> 
       <li>
         <div class="photo-wrapper">
           <div class="photo">
-              <%= link_to image_tag(user.avatar.url(:medium)), user_path(user.id) %>  class: "feed-links" %>
+            <%= link_to image_tag(user.avatar.url(:medium)), user_path(user.id) %>  class: "feed-links" %>
           </div>
           <div class="text bottom"><%= user.business_name %></div>
         </div>
@@ -64,6 +75,7 @@
 </div>
 <div class="clear-fix"></div>
 </body>
+
 <script>
   $(document).ready(function(){
       $('.slider').slider({full_width: true});

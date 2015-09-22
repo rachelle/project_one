@@ -10,3 +10,11 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 end
+
+def self.search(search)
+  if search 
+    find(:all, :condition => ['name LIKE?', "%{hair}%"])
+  else 
+    find(:all)
+  end
+end

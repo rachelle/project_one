@@ -28,15 +28,16 @@
   <div class="col s6"> 
     <%= f.text_field :contact_number, :placeholder => 'phone number', class: 'sign-input' %>
     </div> 
-    <%= f.file_field :avatar, :placeholder => "profile photo", class: 'avatar-input' %>
+    <br/>
+     <%= f.file_field :avatar, :placeholder => "profile photo", class: 'avatar-input' %>
+  
     <div id="map-container">
        <div id="map"></div>
    </div>
         <%= f.hidden_field :lat, id: 'map_lat' %> 
         <%= f.hidden_field :lng, id: 'map_lng' %> 
 
-
-     <%= f.submit "submit", class: "edit-button" %>
+  <%= f.submit "update", class: "edit-button" %>
         <% end %> 
 </div>
 </div>
@@ -50,9 +51,7 @@
   
 
 
-</div>
-  <div class="clear-fix"></div>
-</div>
+
 
 <script> 
   $(document).ready(function(){
