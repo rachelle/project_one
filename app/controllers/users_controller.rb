@@ -2,14 +2,21 @@
   
   def index
     @users = User.all
-    @users = User.search(params[:search])
-  end
-  @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-    marker.lat user.latitude
-    marker.lng user.longitude
+
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+    end
+
+    if params[:serach]
+      @users = User.search(params[:search]).order("created_at DESC")
+    else
+      @users = User.order("created_at DESC")
+    end
+
   end
 
-  
+
   def new
     @user = User.new
   end
@@ -36,8 +43,8 @@
 
   def update
     @user = User.find(params[:id])
-    if @user.save 
-      @user = @user.update_attributes(user_params)
+   
+    if  @user.update_attributes(user_params)
     flash[:success] = "Location Updated"
       redirect_to user_path(current_user)
     else
@@ -59,5 +66,7 @@
   def user_params
     params.require(:user).permit(:name, :email, :password, :avatar, :lat, :lng, :latitude, :longitude)
   end
-  
+
 end
+  
+

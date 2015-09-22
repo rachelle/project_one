@@ -49,14 +49,16 @@
 </div>
 
 <!-- Search Bar for User Services -->
-<div class="searchbar-wrapper">
-  <% form_tag users_path, :method => 'get' do %> 
-    <p> 
-      <%= text_field_tag :search, params[:search] %> 
-      <%= submit_tag "Search", :name => nill %> 
-    </p> 
-  <% end %> 
-</div>
+
+<!-- when submit the form, the view rendered will be the index view users resources  -->
+
+<% @users.each do |user| %> 
+  <div class="article"> 
+    <h1 class="article-title"><%= link_to user.services, user %></h1> 
+
+    <p class="article-content"><%= user.services %></p> 
+  </div>
+<% end %>
 
 <!-- users index -->
 <div class="content">
