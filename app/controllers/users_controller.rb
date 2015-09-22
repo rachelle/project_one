@@ -1,13 +1,21 @@
  class UsersController < ApplicationController
-
+    
   def index
     @users = User.all
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
-
     end
-  end
+
+    @users = User.all
+
+    if params[:search].blank?
+      @users = User.all
+    else
+      @users = User.where(["services = ?", params[:search]])
+    end
+ end
+
 
   def new
     @user = User.new
