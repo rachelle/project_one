@@ -50,20 +50,11 @@
 
 <!-- Search Bar for User Services -->
 
-<div class="searchbar">
+<div class="searchBar">
   <%= form_tag "", method: :get do %>
-    <%= text_field_tag, class: 'searcBar' 'Search', '', name: 'search' %>
-    <%= submit_tag 'Search' %>
+    <%= text_field_tag 'Search', '', name: 'search', class: 'search-box' %>
+    <%= submit_tag 'Search', class: 'search-button' %>
   <% end %>
-</div>
-
-<div id="form-bar">
-  <input id="searchBar" type="text" class="form-control" placeholder="Search for users here">
-</div>
-<div id="search" class="container">
-  <div class="subtitle">
-    <h2>Search result</h2>
-  </div>
 </div>
 
 <!-- users index -->

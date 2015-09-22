@@ -12,7 +12,11 @@
 <!-- poloaroid image viewer -->
 <div class="photo-container center-align">
  <div class="photo-wrapper">
-   <section class= "polaroid z-depth-2"> <%= image_tag (@photo.image.url(:medium)), class: 'image-border' %>
+    <section class= "polaroid z-depth-2"> 
+      <div class="user-pic">
+      <%= image_tag current_user.avatar.url(:thumb), class: 'img-circle user-avatar' %>
+     </div>
+      <%= image_tag (@photo.image.url(:medium)), class: 'image-border' %>
     <br/>
     <span class="review"><%= @photo.content %></span>
    </section>
@@ -64,9 +68,3 @@
 
 <div class="clear-fix"></div>
 <div class="page-footer"></div>
-
-
-
-
-
-
