@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :photos
   has_many :reviews
+  has_many :ratings
   has_secure_password
 
 
