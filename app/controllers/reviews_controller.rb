@@ -41,6 +41,10 @@ class ReviewsController < ApplicationController
     redirect_to photo_path(@photo.id)
   end
 
+  def avarage_rating 
+    ratings.sum(:score) / ratings.size
+  end
+
   private
 
   def review_params

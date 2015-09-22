@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
     resources :sessions
     resources :users
-    resoruces :ratings, only: :update
+    resources :ratings, only: :update
 
     resources :photos do 
       resources :reviews

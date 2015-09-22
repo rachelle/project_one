@@ -71,3 +71,23 @@
 
 <div class="clear-fix"></div>
 <div class="page-footer"></div>
+
+<script>
+  $('#star').raty({
+    readOnly: true,
+    score: <%= @review.average_rating %>,
+    path: '/assets'
+  });
+
+  $('#user_star').raty({
+    score: <%= @rating.score %>,
+    path: '/assets',
+    click: function(score, evt) {
+      $.ajax({
+        url: '/ratings/' + <%= @rating.id %>,
+        type: 'PATCH',
+        data: { score: score }
+      });
+    }
+  });
+</script>
