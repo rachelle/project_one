@@ -1,3 +1,7 @@
+
+
+
+
 <nav>
   <div class="nav-wrapper teal accent-4">
     <a href="#" class="brand-logo">Charms</a>
@@ -18,13 +22,17 @@
       <%= image_tag @user.avatar.url(:thumb)%> 
       <h5 class="profile-name"><%= @user.name %></h5>
       <h6><%= @user.services %></h6>
-      <h5><img class="phone-icon" src="/images/phone-icon.png"><%= @user.contact_number %> 626 - 234 -5678</h5>
+      <h5><img class="phone-icon" src="/images/phone-icon.png"><%= @user.contact_number %> 626 - 234 - 5678</h5>
       <h5><img class="business-icon" src="/images/imac.png"> lashes.com</h5> 
-
-    </li>
+      <h5><%= @user.address %> 234 Palm St. , Los Angeles, 90120</h5>
+     
+      </li>
 
     <li class="collection-item">
-
+<div id="map-container">
+      <div id="map">
+       <%= @user.lat %> 
+      <%= @user.lng %></div>
 
     
 
@@ -56,7 +64,7 @@
         </div>
       </li>
       <li>
-        <div id="map"></div>
+
     <% end %> 
   </ul>
 </div>
@@ -64,14 +72,16 @@
 <div class='clear-fix'></div>
 
 <script> 
- $(document).ready(function){
+ $(document).ready(function(){
     var user = <%= @user.to_json.html_safe %> // pass ruby variable to javascript 
     gmap_show(user);
   });
+</script>
 
-  var markers = handler.addMarkers(<%=raw @hash.to_json %>);
-
+<!--  var markers = handler.addMarkers(<%=raw @hash.to_json %>); -->
+<script src="//maps.google.com/maps/api/js?v=3.14&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script>
+<script src="//maps.google.com/maps/api/js?v=3.14&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script>
 
  
-</script>  
+
 
