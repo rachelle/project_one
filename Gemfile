@@ -37,8 +37,6 @@ gem 'ratyrate'
 #paperclip
 gem "paperclip", "~> 4.3"
 
-gem 'rails_12factor', group: :production 
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -58,7 +56,12 @@ group :development do
   gem 'spring'
 end
 
-ruby "2.2.0"
+group :production do
+  gem 'rails_12factor'
+  gem 'thin'
+end
+
+
 
 
 
