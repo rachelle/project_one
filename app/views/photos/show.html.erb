@@ -25,7 +25,7 @@
 <!-- section for the comments/form -->
 <div class="review-wrapper"> 
   <div class = "col s8">
-    
+    <!-- checks if user is currently logged in -->
     <% if current_user %>
       <!-- nested form for photos/:id/reviews/new -->
       <%= form_for [@photo, @review], class: 'review-form' do |f| %> 
